@@ -3,11 +3,7 @@ import axios from "axios";
 import path from "path";
 import fs from "fs";
 import { promises as fsPromises } from "fs";
-import {
-    GITHUB_REPO,
-    GITHUB_BRANCH,
-    GITHUB_TOKEN,
-} from "./constants";
+import { GITHUB_REPO, GITHUB_BRANCH, GITHUB_TOKEN } from "./constants";
 
 export async function downloadZip(url: string, dest: string) {
     console.log("Downloading ZIP from GitHub...");
@@ -58,6 +54,7 @@ export async function extractItemsFromZip(zipPath: string, targetDir: string) {
     const prefixes = [
         `${GITHUB_REPO}-${GITHUB_BRANCH}/ru/items/`,
         `${GITHUB_REPO}-${GITHUB_BRANCH}/ru/icons/`,
+        `${GITHUB_REPO}-${GITHUB_BRANCH}/ru/listing.json`,
     ];
 
     for (const entry of entries) {

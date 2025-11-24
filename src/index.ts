@@ -13,6 +13,7 @@ import { downloadZip, extractItemsFromZip } from "./github";
 import { hashFile, loadSavedSha, saveSha, removeDir } from "./fsUtils";
 import { runMerge } from "./merge";
 import { copyIconsToOutput } from "./icons";
+import { processListing } from './listingFormate'
 
 async function main() {
     if (CLEAN_ORIG) {
@@ -50,12 +51,14 @@ async function main() {
 
             await fs.promises.rm(zipPath, { force: true });
             runMerge(ORIG_DIR, OUT_DIR);
+            await processListing(OUT_DIR);
             await copyIconsToOutput();
         } else if (process.argv.includes("--force-merge")) {
             console.log(
                 "Local files up-to-date, but --force-merge specified. Running merge..."
             );
             runMerge(ORIG_DIR, OUT_DIR);
+            await processListing(OUT_DIR);
             await copyIconsToOutput();
         } else {
             console.log("No update needed — local files are up-to-date.");

@@ -167,7 +167,6 @@ export function mergeOneItem(orig: Item, variants: Item[]) {
     return orig;
 }
 
-// runMerge: читает все JSON в ORIG_DIR, для каждого пытается применить mergeOneItem
 export function runMerge(ORIG_DIR: string, OUT_DIR: string) {
     const allFiles = scanFolder(ORIG_DIR);
     console.log("Found JSON files:", allFiles.length);
