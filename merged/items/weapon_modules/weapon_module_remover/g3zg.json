@@ -7,7 +7,7 @@
     "args": {},
     "lines": {
       "ru": "Квазидеструктор",
-      "en": "Quasi-destructor",
+      "en": "Quasi-Destructor",
       "es": "Cuasidestructor",
       "fr": "Quasidésintégrateur"
     }
@@ -68,7 +68,7 @@
             "args": {},
             "lines": {
               "ru": "Квазидеструкторы",
-              "en": "Quasi-destructors",
+              "en": "Quasi-Destructors",
               "es": "Cuasidestructores",
               "fr": "Quasidéstructeurs"
             }
